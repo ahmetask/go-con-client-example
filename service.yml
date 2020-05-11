@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-con-client
+  labels:
+    app: go-con-client
+spec:
+  type: NodePort
+  ports:
+    - port: 8081
+      targetPort: 8081
+      name: config-client
+    - port: 8082
+      targetPort: 8082
+      name: app
+  selector:
+    app: go-con-client
